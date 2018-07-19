@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="img/nav-logo.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="css/layui.css">
+  <link rel="stylesheet" href="css/layer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>产品中心</title>
+</head>
+<body>
+  <div class="head-nav">
+    <ul class="layui-nav" lay-filter="demo">
+      <img class="logo-img" src="img/nav-logo.png" alt="">
+      <div class="logo-text">
+        <p class="appname"></p>
+        <p class="eng"></p>
+      </div>
+      <li class="layui-nav-item"><a href="index.html">首页</a></li>
+      <li class="layui-nav-item"><a href="about.html">关于我们</a></li>
+      <li class="layui-nav-item layui-this"><a href="product.html">产品中心</a></li>
+      <li class="layui-nav-item"><a href="news.html">新闻中心</a></li>
+      <li class="layui-nav-item"><a href="leaveMessage.html">在线留言</a></li>
+      <li class="layui-nav-item"><a href="relation.html">联系我们</a></li>
+    </ul>
+  </div>
+  <div class="product-list__show">
+    <div class="product-ban">
+      <div class="product-ban__box">
+      <script id="demo" type="text/html">
+        <ul class="product-ban__le">
+        {{#  layui.each(d, function(index, item){ }}
+          <li id="{{item.id}}">{{item.title}}</li>
+        {{#  }); }} 
+        </ul>
+      </script>
+      <div id="view"></div>
+      <div class="product-ban__ri layui-carousel" id="test1">
+        <ul carousel-item>
+          <li class="product-ban1">
+            <div class="pro-ban__box">
+              <p class="pro-ban__tit appname"></p>
+              <p class="pro-ban__call">欢迎致电</p>
+              <p class="pro-ban__phone mobile">咨询热线：</p>
+            </div>
+          </li>
+          <li class="product-ban2">
+            <div class="pro-ban__box">
+              <p class="pro-ban__tit appname"></p>
+              <p class="pro-ban__call">欢迎致电</p>
+              <p class="pro-ban__phone mobile">咨询热线：</p>
+            </div>
+          </li>
+          <li class="product-ban3">
+            <div class="pro-ban__box">
+              <p class="pro-ban__tit appname"></p>
+              <p class="pro-ban__call">欢迎致电</p>
+              <p class="pro-ban__phone mobile">咨询热线：</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+    <div class="pro-main">
+      <script id="demo2" type="text/html">
+      {{#  layui.each(d, function(index, lists){ }}
+      <div class="pro-main__box">
+        <p class="pro-main__more" id="{{lists.id}}">展开全部></p>
+          <p class="pro-main__tit">{{lists.title}}</p>
+          <ul class="pro-main__list">  
+              {{#  layui.each(lists.list, function(index, item){ }}      
+            <li class="pop-img1">
+              <img src="{{item.url}}" alt="">
+              <span class="pro-list__tit">{{item.title}}</span></li>
+              {{#  }); }}
+          </ul>
+      </div>
+      {{#  }); }} 
+    </script>
+    <div id="view2"></div>
+    </div>
+  </div>
+  <!-- 详情列表 -->
+  <div class="product-list__hide">
+    <div class="pro-main__box">
+      <script id="demo1" type="text/html">
+      <p class="prod-list__tit">
+        <span class="prod-back">返回</span>
+        <span class="list_tit">{{d.title}}</span>
+      </p>
+        <ul class="pro-main__list">
+        {{#  layui.each(d.list, function(index, lis){ }}
+          <li class="pop-img2">
+            <img src= "{{lis.url}}" alt="">
+            <span class="pro-list__tit">{{lis.title}}</span>
+          </li>
+        {{#  }); }} 
+        </ul>
+      </script>
+      <div id="view1"></div>
+      <div id="page1" lay-filter="demo"></div>
+    </div>
+  </div>
+  
+  <div class="common-foot">
+    <div class="common-foot__box">
+      <div class="common-code">
+        <p>微信扫一扫</p>
+        <img src="img/code.png" alt="">
+      </div>
+      <div class="common-info">
+        <ul>
+          <li>
+            <p class="username"></p>
+            <p class="phone"></p>
+          </li>
+          <li class="margin-le">
+            <p class="address"></p>
+            <p class="email"></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="icp-text icp"></p>
+  </div>
+  <div class="back-top"></div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/layui.all.js"></script>
+  <script src="js/product.js"></script>
+  <script>
+    layui.use('carousel', function(){
+      var carousel = layui.carousel;
+      //建造实例
+      carousel.render({
+        elem: '#test1'
+        ,width: '1048px'
+        ,height: '324px'
+        ,arrow: 'none' //始终显示箭头
+        ,autoplay: true
+        ,interval: 6000
+      });
+    });
+  </script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>

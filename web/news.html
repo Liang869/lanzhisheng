@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="img/nav-logo.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="css/layui.css">
+  <link rel="stylesheet" href="css/layer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>新闻中心</title>
+</head>
+<body>
+  <div class="head-nav">
+    <ul class="layui-nav" lay-filter="demo">
+        <img class="logo-img" src="img/nav-logo.png" alt="">
+        <div class="logo-text">
+          <p class="appname"></p>
+          <p class="eng"></p>
+        </div>
+      <li class="layui-nav-item"><a href="index.html">首页</a></li>
+      <li class="layui-nav-item"><a href="about.html">关于我们</a></li>
+      <li class="layui-nav-item"><a href="product.html">产品中心</a></li>
+      <li class="layui-nav-item layui-this"><a href="news.html">新闻中心</a></li>
+      <li class="layui-nav-item"><a href="leaveMessage.html">在线留言</a></li>
+      <li class="layui-nav-item"><a href="relation.html">联系我们</a></li>
+    </ul>
+  </div>
+  <div class="news-main">
+    <div class="news-list__box new-list__show">
+      <ul class="news-main__list">
+        <script id="demo5" type="text/html">
+          {{#  layui.each(d.list, function(index, item){ }}
+            <li id="{{item.cid}}">
+              <p class="news-main__tit">{{item.title}}</p>
+              <p class="news-main__date">{{item.gtmCreate}}</p>
+              <div class="news-text__box">
+                <p class="news-text__hide">{{item.subTitle}}</p>
+                <p class="news-box__more">查看详情></p>
+              </div>
+            </li>
+        {{#  }); }}
+        {{#  if(d.list.length == 0){ }}
+        暂无数据
+        {{#  } }}
+        </script> 
+        <div id="view5"></div> 
+      </ul>
+      <div id="page2"></div>
+    </div>
+    <div class="news-list__hide">
+        <p class="new-info__back">返回</p>
+        <script id="demo6" type="text/html">
+          <div class="news-info__title">{{d.title}}</div>
+          <div>{{d.content}}</div>
+          <div class="news-user__info">
+            <p>作者：{{d.author}}</p>
+            <p>{{d.gtmCreate}}</p>
+          </div>
+        </script> 
+        <div id="view6"></div> 
+    </div>
+  </div>
+  <div class="common-foot">
+    <div class="common-foot__box">
+      <div class="common-code">
+        <p>微信扫一扫</p>
+        <img src="img/code.png" alt="">
+      </div>
+      <div class="common-info">
+        <ul>
+          <li>
+            <p class="username"></p>
+            <p class="phone"></p>
+          </li>
+          <li class="margin-le">
+            <p class="address"></p>
+            <p class="email"></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="icp-text icp"></p>
+  </div>
+  <div class="back-top"></div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/layui.all.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
