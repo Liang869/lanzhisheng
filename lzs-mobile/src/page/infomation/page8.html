@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+    <title>经营信息</title>
+</head>
+<body id="business">
+<div class="main" id="activity">
+    <div class="page-content">
+       <div class="card mb-20 h-560">
+           <div class="title4">数据总览<p>数据统计时间：2018-01-31</p></div>
+           <div class="database">
+               <p class="p1">累计交易（借贷）总额（元）</p>
+               <p class="p2" id="investment_total"></p>
+               <table>
+                   <tr>
+                       <td>
+                           <p class="p3" id="investment_times"></p>
+                           <p class="p4">累计交易(借贷)笔数(个)</p>
+                       </td>
+                       <td>
+                           <p class="p3" id="user_investment_times"></p>
+                           <p class="p4">累计出借人数量(人)</p>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <p class="p3" id="now_user_investment"></p>
+                           <p class="p4">当前出借人数量(人)</p>
+                       </td>
+                       <td>
+                           <p class="p3" id="connect"></p>
+                           <p class="p4">关联关系借款余额(元)</p>
+                       </td>
+                   </tr>
+               </table>
+           </div>
+       </div>
+        <div class="card mb-20">
+            <div class="title4">风险控制</div>
+           <div class="table-4">
+               <table>
+                   <tr>
+                       <td>
+                           <p class="p3">0.00</p>
+                           <p class="p4">逾期金额(元)</p>
+                       </td>
+                       <td>
+                           <p class="p3">0.00</p>
+                           <p class="p4">逾期90天以上金额(元)</p>
+                       </td>
+                   </tr>
+               </table>
+           </div>
+        </div>
+        <div class="card mb-20">
+            <div class="table-4">
+                <table>
+                    <tr>
+                        <td>
+                            <p class="p3">0.00</p>
+                            <p class="p4">代偿金额(元)</p>
+                        </td>
+                        <td>
+                            <p class="p3">0</p>
+                            <p class="p4">逾期90天以上笔数(笔)</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="card">
+            <div class="table-4">
+                <table>
+                    <tr>
+                        <td>
+                            <p class="p3">0</p>
+                            <p class="p4">逾期笔数(笔)</p>
+                        </td>
+                        <td>
+                            <p class="p3">0</p>
+                            <p class="p4">代偿笔数(笔)</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../lab/js/view.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/_app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

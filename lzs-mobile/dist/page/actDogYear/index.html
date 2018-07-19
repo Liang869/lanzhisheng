@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="stylesheet" type="text/css" href="css/69ef.style.css"/>
+
+    <title>开工大吉，全场加息</title>
+</head>
+<body>
+<div class="main" id="activity">
+    <div class="page-content">
+        <div class="banner"><img src="img/yb.png" class="run2"></div>
+        <div class="card">
+
+            <div class="tab">
+                <ul>
+                    <li v-bind:class="{'active':tab == 1}" @click="tab=1">
+                        <p class="p1">上午10:00</p>
+                        <p class="p2">愿“旺”加息4.8%</p>
+                    </li>
+                    <li v-bind:class="{'active':tab == 2}" @click="tab=2">
+                        <p class="p1">下午15:00</p>
+                        <p class="p2">鸿运加息3.8%</p>
+                    </li>
+                    <li v-bind:class="{'active':tab == 3}" @click="tab=3">
+                        <p class="p1">00:00-24:00</p>
+                        <p class="p2">全场加息1.88%</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="list" v-show="tab=='1'">
+
+                <div class="item" >
+                    <ul>
+                        <li><img src="img/jiao.png" class="angle"><img src="img/biao1.png"></li>
+                        <li><img src="img/jiao.png" class="angle"><img src="img/biao2.png"></li>
+                        <li><img src="img/jiao.png" class="angle"><img src="img/biao3.png"></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="list" v-show="tab=='2'">
+
+                <div class="item" >
+                    <ul>
+                        <li><img src="img/jiao.png" class="angle"><img src="img/biao4.png"></li>
+                        <li><img src="img/jiao.png" class="angle"><img src="img/biao5.png"></li>
+                        <li><img src="img/jiao.png" class="angle"><img src="img/biao6.png"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="list" v-show="tab=='3'">
+
+                <div class="item" >
+                    <img src="img/biao7.png">
+                    <img src="img/biao8.png">
+                    <img src="img/biao9.png">
+                    <img src="img/biao10.png">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="title"><img src="img/2.png"></div>
+            <div class="imgs"><img src="img/4.png"></div>
+        </div>
+        <div class="card">
+            <div class="title"><img src="img/6.png"></div>
+            <div class="imgs"  @click="goAct('actNewUserTwo')"><img src="img/7.png"></div>
+        </div>
+        <div class="act-company">
+            <p class="p5">温馨提示：爆款产品不可使用优惠券哦～</p>
+            <p>兰致胜理财保留在法律允许范围内对活动的解释权 </p>
+            <p class="tel"><a href='tel:400-656-9856'>客服热线：400-656-9856</a></p>
+            <p>理财有风险, 投资需谨慎</p>
+        </div>
+        <div class="bar-floor" @click="goList()">立即投资</div>
+    </div>
+</div>
+<script src="../../lab/js/view.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/d4f4._app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

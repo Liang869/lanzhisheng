@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: "微软雅黑", Helvetica, Arial, sans-serif;
+}
+.main{
+    margin-bottom: 20px;
+    padding: 10px;
+}
+p , li{
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    padding-left: 7px;
+}
+ol{
+    padding-left: 20px;
+}
+ul{
+    padding-left: 23px;
+}

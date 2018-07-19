@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="stylesheet" type="text/css" href="css/54dd.style.css"/>
+    <title>每日夜市</title>
+</head>
+<body>
+<div class="main" id="activity">
+    <div class="act-banner">
+        <div class="rule" @click="openRule()">活动规则</div>
+    </div>
+    <div class="page-content">
+        <div class="group act-night" @click="goProItem()">
+            <img src="img/3.png" class="home">
+
+            <div class="pro">
+                <div class="mask_layer" v-show="isOpen == false">暂未营业</div>
+                <ul>
+                    <li  class="l1">
+                        <p class="p1">14<span>%</span></p>
+                        <p class="p2">往期平均收益率</p>
+                    </li>
+                    <li  class="l2">
+                        <p class="p1"><span>1-3月期</span></p>
+                        <p class="p2">产品期限</p>
+                    </li>
+                    <li  class="l3">
+                        <button  v-show="!(isOpen && !isBuy)">立即抢购<img src="img/right.png"></button>
+                        <button class="btn2" v-show="isOpen && !isBuy">已售罄</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="num">当前可用额度：<span v-html="number">3000</span>元</div>
+        </div>
+        <div class="group act-common"  @click="goPro()">
+            <img src="img/4.png" class="home">
+            <div class="pro">
+                <ul>
+                    <li class="l1">
+                        <p class="p3">8.5<span>%</span></p>
+                        <p class="p2">一月期</p>
+                    </li>
+                    <li  class="l2">
+                        <p class="p3">9.5<span>%</span></p>
+                        <p class="p2">二月期</p>
+                    </li>
+                    <li  class="l3">
+                        <p class="p3">10.5<span>%</span></p>
+                        <p class="p2">三月期</p>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="btn1">去获取额度<img src="img/right.png"></div>
+        </div>
+        <div class="act-company">
+            <p>兰致胜理财保留在法律允许范围内对活动的解释权</p>
+            <p class="tel">客服热线：400-656-9856</p>
+            <p>理财有风险, 投资需谨慎</p>
+        </div>
+    </div>
+</div>
+<script src="js/671b._app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

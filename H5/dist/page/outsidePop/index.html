@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="stylesheet" type="text/css" href="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/css/173b.style.css"/>
+    <title>兰致胜理财</title>
+</head>
+<body>
+<div class="main" id="activity">
+    <div class="pop-ban">
+        <img src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/img/1.png" alt="">
+        <img class="img-gif" src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/img/2188.png" alt="">
+    </div>
+    <div class="form">
+        <ul>
+            <li class="form-phone">
+                <input type="text" v-model="form.phone" placeholder="请输入手机号" maxlength="11">
+            </li>
+            <li class="grap-code">
+                <input type="text" v-model="form.vertify_code" placeholder="请输入图形验证码" maxlength="4">
+                <button class="btn1"><img v-bind:src="''+imgsrc" @click="getCheckCode()"></button>
+            </li>
+            <li class="mobile-code">
+                <input type="tel" v-model="form.sms_code" placeholder="请输入短信验证码" maxlength="6">
+                <button class="btn2" @click="getCheckMsg()" v-html="btn_text"></button>
+            </li>
+            <li class="reg-prot">
+                <span></span>注册即视为同意
+                <a href="https://mobile-app.lanzhishenglc.com/Public/static_common/ding_web/base/login/register_agreement.html">《兰致胜理财注册协议》</a>、
+                <a href="https://mobile-app.lanzhishenglc.com/Public/static_common/ding_web/base/login/risk_warning.html">《风险提示书》</a>及
+                <a href="https://mobile-app.lanzhishenglc.com/dist/page/media/fxq.html">《反洗钱告知书》</a>
+            </li>
+            <li class="item-button" @click="submit()">
+                <img src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/img/3.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <div class="out-link">
+        <img class="img-width" src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/img/4.png" alt="">
+        <div class="out-link__box">
+            <a @click="newBag()" :href="href1">
+                <img src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/img/5.png" alt="">
+            </a>
+            <a @click="headBid()" :href="href2">
+                <img style="margin-top: 30px;" src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/img/6.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="state-backed">
+        <img class="img-width" src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/img/7.png" alt="">
+        <img style="margin-top: 40px;" src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/img/8.png" alt="">
+    </div>
+    <div class="outside_pop">
+        <img src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/img/pop.png" alt="">
+    </div>
+</div>
+<div class="foot">
+    <p>兰致胜理财保留在法律允许范围内对活动的解释权</p>
+    <p class="tel"><a href='tel:400-086-6858'>客服热线：400-086-6858</a></p>
+    <p>理财有风险 投资需谨慎</p>
+    <p>杭州兰胜金融外包有限公司</p>
+</div>
+<script src="//cdn-h5.lanzhishenglc.com/dist/lab/js/view.js" type="text/javascript" charset="utf-8"></script>
+<script src="//cdn-h5.lanzhishenglc.com/dist/page/outsidePop/js/3682._app.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    setInterval(function(){
+
+        $('.img-gif')
+        .animate({left: "40px"},100)
+        .animate({left: "60px"},100)
+        .animate({left: "44px"},100)
+        .animate({left: "56px"},100)
+        .animate({left: "46px"},100)
+        .animate({left: "54px"},100)
+        .animate({left: "52px"},100)
+    },3000);
+</script>
+</body>
+</html>

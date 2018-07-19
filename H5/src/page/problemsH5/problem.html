@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常见问题</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="js/_app.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #f7f7f7;
+        }
+
+        .problem {
+            border-top: 1px solid #f0f0f0;
+            margin-top: 10px;
+            background-color: #FFFFFF;
+            /*padding-bottom: 10px;*/
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .problem_title {
+            font-size: 13px;
+            color: #000;
+            line-height: 38px;
+            margin-left: 35px;
+            margin-right: 13px;
+        }
+
+        .problem_content {
+            font-size: 13px;
+            color: #999999;
+            margin: 10px 13px 0 35px;
+            padding-bottom: 10px;
+        }
+
+        .problem_line {
+            margin-left: 35px;
+            margin-right: 13px;
+        }
+
+        .hide {
+            display: none;
+        }
+        .problem_img{
+            position: absolute;
+            height: 10px;
+            float: left;
+            margin-top:14px;
+            margin-left: 16px;
+        }
+        .problem_img_click{
+            position: absolute;
+            width: 10px;
+            float: left;
+            margin-top:16px;
+            margin-left: 14px;
+        }
+        [ng-cloak]{display:none;}
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" ng-cloak>
+<div ng-repeat="item in data" class="problem" ng-init="item.src='img/right.png'" ng-cloak>
+    <img ng-src="{{item.src}}" ng-class="{'problem_img':item.isHide,'problem_img_click':!item.isHide}" ng-click="toggle(item)">
+    <p class="problem_title" ng-click="toggle(item)" ng-cloak>{{item.title}}</p>
+    <hr class="problem_line" noshade="noshade" size="1" color="#f0f0f0" ng-class="{'hide':item.isHide}">
+    <p class="problem_content" ng-class="{'hide':item.isHide}" ng-bind-html="item.content"></p>
+</div>
+<script>
+    var myApp = angular.module("myApp", ['ngSanitize']);
+    myApp.controller('myCtrl', function ($scope) {
+        var key = GetQueryString('key');
+        var title=""
+        switch(key)
+        {
+            case "one":
+                title = "注册/认证";
+                break;
+            case "two":
+                title = "充值/提现";
+                break;
+            case "three":
+                title = "投资购买";
+                break;
+            case "four":
+                title = "活动/优惠券";
+                break;
+            default:
+
+        }
+        document.title = title;
+        $scope.toggle = function (item) {
+            item.isHide = !item.isHide;
+            item.src = item.isHide ? "img/right.png" : "img/down.png";
+
+        };
+        var problems = {};
+        try{
+
+            problems = JSON.parse(localStorage.getItem("problems"));
+
+        }catch (e){
+
+        }
+        if(problems[key]){
+            $scope.data = problems[key];
+        }
+
+        $scope.data.map(function (t) {
+            t.isHide = true;
+        })
+    });
+
+</script>
+</body>
+</html>

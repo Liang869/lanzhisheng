@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="stylesheet" type="text/css" href="css/c7ce.style.css"/>
+    <title>风险测评</title>
+</head>
+<body>
+<div class="main" id="activity">
+    <div class="page-content">
+        <div class="y"></div>
+        <div class="card"  v-if="type == 2">
+
+            <div class="remark">
+                我们将对您进行风险承受能力评估。根据测评结果，您的风险承受能力将属于五种类型中的一种：<b>谨慎型、稳健型、平衡型、积极型、进取型</b>。为了给您提供更好的资产配置建议， 请认真作答，感谢您的配合！
+            </div>
+            <div class="ask">
+                <p>{{cursor+1}}/10</p>
+                <p>{{topics[cursor].ask}}</p>
+
+            </div>
+            <div class="answer">
+                <ul>
+                    <li v-bind:class="{'active':topics[cursor].active && topics[cursor].active == item.key}" v-for = "item in topics[cursor].answer" @click="setTopics(item)" >
+
+                        <p v-bind:class="{ 'lh' : item.value.length<24 }"> {{item.value}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div @click="back()" v-show="cursor>0" class="back">上一题</div>
+
+        </div>
+        <div class="result" v-if="type == 1">
+            <div class="t1">您的评估结果</div>
+            <div class="level">
+                <div class="run">
+                    <div class="ball"></div>
+                </div>
+                <div class="group">
+                    <div class="card1">
+                        <div class="card2">
+                            {{resData.level}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="t2">{{levelText[resData.flag]||''}}</div>
+            <div class="t3" >
+                <p v-if="status == 2">加息券奖励已放入您的券包中</p>
+            </div>
+            <div @click="goBack()" class="success">完成</div>
+            <div @click="restart()" class="restart">重新测评</div>
+            <div class="last"><img src="img/safe.png">国资背景,银行存管接入中</div>
+        </div>
+    </div>
+    <div class="bar-floor" @click="submit()" v-show = "cursor == 9 && topics[cursor].active != ''">提交</div>
+</div>
+<script src="js/6d3d._app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

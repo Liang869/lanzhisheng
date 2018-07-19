@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>注册即享新手专属福利</title>
+</head>
+
+<body>
+    <div class="main" id="activity">
+        <div class="head-ban">
+            <img src="img/ban.png" alt="">
+        </div>
+        <div class="bg-img">
+            <img src="img/bg.png" alt="">
+            <img class="img-pos" src="img/bag1.png" alt="">
+        </div>
+        <div class="new-rem">            
+            <p class="rem-title">新手标福利还剩 <span class="rem-date" v-html="proInfo.noviceTime?proInfo.noviceTime:'0'"></span> 天到期</p>
+            <img src="img/bag2.png" alt="">  
+            <ul class="rem-lists">
+                <li class="rem-li">
+                    <p><span v-html="proInfo.half"></span>元</p>
+                </li>
+                <li class="rem-li">
+                    <p><span v-html="proInfo.one"></span>元</p>
+                </li>
+                <li class="rem-li">
+                    <p><span v-html="proInfo.two"></span>元</p>
+                </li>
+                <li class="rem-li">
+                    <p style="line-height: 30px;"><span v-html="proInfo.three"></span>元</p>
+                </li>
+            </ul>  
+        </div>
+        <img style="margin-top: 46px;" src="img/bag3.png" alt="">
+        <div class="foot">
+            <p>兰致胜投资保留在法律允许范围内对活动的解释权</p>
+            <p class="tel"><a href='tel:400-086-6858'>客服热线：400-086-6858</a></p>
+            <p class="foot-change">市场有风险 投资需谨慎</p>
+        </div>
+        <div class="invest-link" @click="goPro()">
+            立即投资
+        </div>
+    </div>
+    <script src="js/_app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

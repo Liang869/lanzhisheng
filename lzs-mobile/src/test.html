@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        li{
+            padding:10px;
+            font-size:15px;
+            margin:10px;
+            border:1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="toClient" id="toProjectDetail">dinglc.toProjectDetail()跳到标的详情页</li>
+            <li class="toClient" id="toMain">dinglc.toMain(1)跳到理财页</li>
+            <li class="toClient" id="login">dinglc.login()跳到登陆</li>
+            <li class="toClient" id="shareForInvite">dinglc.shareForInvite(uid)分享邀请链接</li>
+        </ul>
+        <br>
+       <ul>
+           <li class="toClient" id="share">dinglc.share()分享</li>
+           <li class="toClient" id="home">dinglc.home()跳转首页</li>
+           <li class="toClient" id="buy">dinglc.buy()立即购买支付 </li>
+           <li class="toClient" id="fiance">dinglc.fiance()到理财</li>
+           <li class="toClient" id="mine">dinglc.mine()到我的</li>
+           <li class="toClient" id="find">dinglc.find()到发现</li>
+           <li class="toClient" id="productDetail">dinglc.productDetail()到理财详情</li>
+           <li class="toClient" id="toAccountCenter">dinglc.toAccountCenter()到账户中心</li>
+           <li class="toClient" id="toShareAPP">dinglc.toShareAPP()到分享APP</li>
+           <li class="toClient" id="toAllTickets">dinglc.toAllTickets()到劵包</li>
+           <!--<li class="toClient" id="SavePicinPhone">dinglc.SavePicinPhone()到分享APP</li>-->
+           <li class="toClient" id="toWallet">到我的账户	dinglc.toWallet()</li>
+           <li class="toClient" id="toInvestment">到投资记录	dinglc.toInvestment()</li>
+           <li class="toClient" id="toAccumulateEarn">到累计收益	dinglc.toAccumulateEarn()</li>
+           <li class="toClient" id="toFundsTunOut">到提现	dinglc.toFundsTunOut()</li>
+           <li class="toClient" id="toTotalAsset">到总资产	dinglc.toTotalAsset()</li>
+           <li class="toClient" id="toLogin">到登录	dinglc.toLogin()</li>
+       </ul>
+    </div>
+</body>
+<script src="lab/js/zepto.js" type="text/javascript" charset="utf-8"></script>
+<script src="lab/js/init.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $(function(){
+        $(".toClient").click(function(){
+            var id = $(this).attr("id");
+            var opt={};
+            if(id == 'toProjectDetail' || id == 'productDetail'){
+                opt['project_id']=245;
+
+            }else if (id == 'share'){
+                opt['title']="测试标题";
+                opt['imageUrl']="http://mobile-app.lanshenglc.com/dist/page/actFirstAndLastPro/img/1.png";
+                opt['url']="http://mobile-app.lanshenglc.com/dist/page/actFirstAndLastPro/index.html";
+                opt['content']="测试内容";
+            }
+            var isAndroid = function () {
+                var ua = navigator.userAgent.toLowerCase();
+                if (/iphone|ipad|ipod/.test(ua)) {
+                    return false;
+                } else if (/android/.test(ua)) {
+                    return true;
+                }
+            };
+            var cloud = new Cloud();
+            cloud.goTo(id,opt)
+        });
+    })
+</script>
+</html>
